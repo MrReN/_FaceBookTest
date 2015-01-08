@@ -7,9 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AsyncDisplayKit.h>
+#import "_MainCellNode.h"
+#import <AFNetworking.h>
+#import "_MainItem.h"
+#import "_HandleString.h"
+#import <UIImageView+WebCache.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<ASTableViewDataSource,ASTableViewDelegate,UIScrollViewDelegate>
 
-
+@property (nonatomic,strong)ASTableView * tableView;
+@property (nonatomic,strong)NSMutableArray * dataArray;
+@property (nonatomic,strong)UIRefreshControl * refreshControl;
+@property (nonatomic)int page;
+@property (nonatomic)int indexRow;
+@property (nonatomic,strong)NSMutableArray * nodeArray;
+@property (nonatomic,strong)NSMutableArray * indexArray;
 @end
 
